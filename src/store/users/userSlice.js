@@ -25,18 +25,11 @@ const userSlice = createSlice({
       state.products.push(action.payload);
     },
     updateProduct: (state, action) => {
-      state.products = state.products.map((product)=>product.id === action.payload.id ? {
-        ...action.payload
-      }: product)
+      state.products = state.products.map((product)=> product.id === action.payload.id ? { ...action.payload }: product)
     },
     deleteProduct: (state, action) => {
-      const index = state.products.findIndex(item => item.id == action.payload)
-      console.log(index);
-      if(index != -1){
-        state.products = state.products.slice(index, 0);
-      }
+      state.products = state.products.filter(( item ) => item.id !== action.payload)
     }
-
   },
 });
 

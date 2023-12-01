@@ -67,7 +67,6 @@ export const getData = () => {
       response.forEach((item) => {
           tempArr.push({ id: item.id, ...item.data() })
       });
-      console.log(tempArr);
       dispatch(setProducts(tempArr));
     } catch (error) {
       dispatch(
@@ -94,12 +93,12 @@ export const createData = (product) => {
 }
 
 export const updateData = (product) => {
-  const documentRef = doc(productCollection, product.id);
+  const documentRef = doc(productCollection, product.id); /** Referencia del documento */
   return async (dispatch) => {
     try {
       dispatch(updateProduct(product));
       delete product.id;
-      const response = await setDoc( documentRef, product);
+      await setDoc( documentRef, product);
       // console.log(response);
     } catch (error) {
       dispatch(
