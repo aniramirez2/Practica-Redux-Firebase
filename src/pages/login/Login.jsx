@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { getData, loginGoogle } from '../../store/users/userActions'
+import { loginGoogle } from '../../store/users/userActions'
 import { firestore } from '../../firebase/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import { useForm } from "react-hook-form";
@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const handleLogin = ()=>{
-     dispatch(loginGoogle())
+    dispatch(loginGoogle())
   }
   
   const { register, handleSubmit } = useForm();
