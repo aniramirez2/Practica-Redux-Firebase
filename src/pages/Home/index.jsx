@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { createData, deleteData, getData, updateData } from '../../store/products/productActions'
 import { FaEdit } from "react-icons/fa"
 import { MdDelete } from "react-icons/md"
+import { logoutAsync } from '../../store/users/userThunks'
 
 
 function Home() {
@@ -50,6 +51,13 @@ function Home() {
   return (
     <div className='w-full flex flex-col gap-3'>
       <h1 className='text-center text-xl font-black tracking-widest text-indigo-800'>CRUD Productos</h1>
+      <button 
+        className='bg-indigo-500 px-3 py-1 rounded text-white'
+        type='button'
+        onClick={() => dispatch(logoutAsync())}
+      >
+        Cerrar sesión
+      </button>
       <form className='flex flex-col gap-3 p-5 rounded bg-indigo-100'>
         <input type='text' readOnly hidden value={id}/>
         <div className='flex gap-3'>
@@ -107,8 +115,8 @@ function Home() {
               </div>
             </div>
             <div className='flex gap-2'>
-              <button className='bg-orange-400 px-3 py-1 rounded text-white' type='button' onClick={() => handleEdit(item)}><FaEdit /></button>
-              <button className='bg-red-400 px-3 py-1 rounded text-white' type='button' onClick={() => handleDelete(item.id)}><MdDelete /></button>
+              <button className='bg-orange-400 px-4 rounded text-white' type='button' onClick={() => handleEdit(item)}><FaEdit /></button>
+              <button className='bg-red-400 px-4 rounded text-white' type='button' onClick={() => handleDelete(item.id)}><MdDelete /></button>
             </div>
           </div>
         ))
