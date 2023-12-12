@@ -8,7 +8,7 @@ import {
 } from "firebase/auth"
 import { setError, setIsAuthenticate, setUser } from "./userSlice"
 import { auth } from "../../firebase/firebaseConfig"
-
+import { createUserInCollection } from "../../services/userService"
 
 export const createAnAccountAsync = (newUser) => async (dispatch) => {
   try {
@@ -21,14 +21,15 @@ export const createAnAccountAsync = (newUser) => async (dispatch) => {
       displayName: newUser.name,
       photoURL: newUser.photoURL,
     })
-    console.log(user)
+    const userLogged = await createUserInCollection(user.uid, { name: newUser.name, photoURL: newUser.photoURL, accessToken: user.accessToken, email: newUser.email })
+    // console.log(user)
     dispatch(
       setUser({
-        id: user.uid,
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-        accessToken: user.accessToken,
+        id: userLogged.uid,
+        displayName: userLogged.name,
+        email: userLogged.email,
+        photoURL: userLogged.photoURL,
+        accessToken: userLogged.accessToken,
       })
     )
     dispatch(setIsAuthenticate(true))
