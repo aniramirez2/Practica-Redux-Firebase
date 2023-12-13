@@ -1,0 +1,104 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Login renders 1`] = `
+<section
+  className="w-full px-5"
+>
+  <h1
+    className="text-3xl font-bold underline my-3"
+  >
+    Iniciar sesión
+  </h1>
+  <form
+    className="grid justify-start"
+    onSubmit={[Function]}
+  >
+    <input
+      className="border border-indigo-300 rounded-md my-3 h-10 text-indigo-700 px-5"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Ingrese su correo electrónico"
+      type="email"
+    />
+    <input
+      className="border border-indigo-300 rounded-md my-3 h-10 text-indigo-700 px-5"
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Ingrese su contraseña"
+      type="password"
+    />
+    <div
+      className="flex gap-4"
+    >
+      <button
+        className="bg-violet-400 text-white h-10 rounded-md my-5 px-5"
+        type="submit"
+      >
+        Iniciar sesión
+      </button>
+      <button
+        className="bg-green-400 text-white h-10 rounded-md my-5 p-5 flex place-items-center flex gap-2"
+        onClick={[Function]}
+        type="button"
+      >
+        Ingresar con google
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 640 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"
+          />
+        </svg>
+      </button>
+      <button
+        className="bg-green-400 text-white h-10 rounded-md my-5 p-5 flex place-items-center flex gap-2"
+        onClick={[Function]}
+        type="button"
+      >
+        Ingresar con celular
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+          />
+        </svg>
+      </button>
+    </div>
+    <p>
+      Si no tiene una cuenta registrada, registrese
+      <a
+        className="text-indigo-900 underline px-1"
+        href="/register"
+        onClick={[Function]}
+      >
+        aquí
+      </a>
+    </p>
+  </form>
+</section>
+`;
